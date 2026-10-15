@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args){
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Player A, enter R, P, or S: ");
+        String playerAChoice = input.nextLine();
+
+        if (!playerAChoice.equalsIgnoreCase("R") && !playerAChoice.equalsIgnoreCase("P") && !playerAChoice.equalsIgnoreCase("S")){
+
+            System.out.println("Error: Invalid Input from player A");
+            System.exit(0);
+        }
+
+        System.out.print("Player B, enter R, P, or S: ");
+        String playerBChoice = input.nextLine();
+
+        if (!playerBChoice.equalsIgnoreCase("R") && !playerBChoice.equalsIgnoreCase("P") && !playerBChoice.equalsIgnoreCase("S")){
+
+            System.out.println("Error: Invalid Input from Player B");
+            System.exit(0);
+        }
+
+        if (playerAChoice.equalsIgnoreCase(playerBChoice)) {
+            if (playerAChoice.equalsIgnoreCase("R")){
+                System.out.println("Rock vs Rock. It is a Tie");
+            } else if (playerAChoice.equalsIgnoreCase("P")) {
+                System.out.println("Paper vs Paper. It is a Tie");
+            }else {
+                System.out.println("Scissors vs Scissors. It is a Tie");
+            }
+
+
+        } else if (playerAChoice.equalsIgnoreCase("R") && playerBChoice.equalsIgnoreCase("S")) {
+            System.out.println("Rock crushes Scissors");
+            System.out.println("Player A wins!");
+        } else if (playerAChoice.equalsIgnoreCase("P") && playerBChoice.equalsIgnoreCase("R")) {
+            System.out.println("Paper covers Rock.");
+            System.out.println("Player A wins!");
+        } else if (playerAChoice.equalsIgnoreCase("S") && playerBChoice.equalsIgnoreCase("P")) {
+            System.out.println("Scissors slices Paper");
+            System.out.println("Player A wins!");
+
+        } else if (playerBChoice.equalsIgnoreCase("R") && playerAChoice.equalsIgnoreCase("S")) {
+            System.out.println("Rock crushes Scissors");
+            System.out.println("Player B wins!");
+        } else if (playerBChoice.equalsIgnoreCase("P") && playerAChoice.equalsIgnoreCase("R")) {
+            System.out.println("Paper covers Rock");
+            System.out.println("Player B wins!");
+        } else if (playerBChoice.equalsIgnoreCase("S") && playerAChoice.equalsIgnoreCase("P")) {
+            System.out.println("Scissors slices paper");
+            System.out.println("Player B wins!");
+        }
+        input.close();
+
+    }
+}
